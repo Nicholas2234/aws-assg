@@ -5,7 +5,7 @@ sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/zhiiyii/aws-assg.git
 cd aws-assg
-pip3 install flask
-pip3 install pymysql
-pip3 install boto3
-python3 EmpApp.py
+sudo pip3 install flask
+sudo pip3 install pymysql
+sudo pip3 install boto3
+sudo python3 EmpApp.py

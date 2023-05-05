@@ -1,107 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Employee Information</title>
+  <script>
+    function display()
+    {
+    document.getElementById("displayarea").innerHTML = document.getElementById("empID").value; 
+    document.getElementById("empID").value = "";
+    document.getElementById("displayarea1").innerHTML = document.getElementById("empName").value; 
+    document.getElementById("empName").value = "";
+    document.getElementById("displayarea2").innerHTML = document.getElementById("dob").value; 
+    document.getElementById("dob").value = "";
+    document.getElementById("displayarea3").innerHTML = document.getElementById("gender").value; 
+    document.getElementById("gender").value = "";  
+    document.getElementById("displayare4").innerHTML = document.getElementById("address").value; 
+    document.getElementById("address").value = "";
+    document.getElementById("displayarea5").innerHTML = document.getElementById("contactNo").value; 
+    document.getElementById("contactNo").value = ""; 
+    document.getElementById("displayare6").innerHTML = document.getElementById("email").value; 
+    document.getElementById("email").value = "";
+    document.getElementById("displayarea7").innerHTML = document.getElementById("job_status").value; 
+    document.getElementById("job_status").value = "";    
+    document.getElementById("displayare8").innerHTML = document.getElementById("hire_date").value; 
+    document.getElementById("hire_date").value = "";
+    document.getElementById("displayarea9").innerHTML = document.getElementById("job_title").value; 
+    document.getElementById("job_title").value = "";
+    document.getElementById("displayarea10").innerHTML = document.getElementById("department").value; 
+    document.getElementById("department").value = ""; 
+    document.getElementById("displayare11").innerHTML = document.getElementById("payscale").value; 
+    document.getElementById("payscale").value = "";
+    document.getElementById("displayarea12").innerHTML = document.getElementById("payroll").value; 
+    document.getElementById("payroll").value = "";    
+    document.getElementById("displayare13").innerHTML = document.getElementById("benefit1").value; 
+    document.getElementById("benefit1").value = "";
+    document.getElementById("displayarea14").innerHTML = document.getElementById("benefit2").value; 
+    document.getElementById("benefit2").value = "";
+    document.getElementById("displayare15").innerHTML = document.getElementById("benefit3").value; 
+    document.getElementById("benefit3").value = "";
+    document.getElementById("displayarea16").innerHTML = document.getElementById("benefit4").value; 
+    document.getElementById("benefit4").value = "";
+    document.getElementById("displayare17").innerHTML = document.getElementById("benefit5").value; 
+    document.getElementById("benefit5").value = "";
+    document.getElementById("displayarea18").innerHTML = document.getElementById("benefit6").value; 
+    document.getElementById("benefit6").value = "";
+    document.getElementById("displayare19").innerHTML = document.getElementById("days_attended").value; 
+    document.getElementById("days_attended").value = "";
+    document.getElementById("displayarea20").innerHTML = document.getElementById("work_hour").value; 
+    document.getElementById("work_hour").value = "";
+    
+    }
+    </script>
+<style>
+
+.forms {
+	display: block;
+	text-align: left;
+	border-radius: 30px;
+	justify-content: center;
+  padding: 10px; 
+  width: 300px;
+  height: auto;
+  resize: vertical;
+ 
+} 
+
+.navigation {
+	display: block; 
+  width: 300px;
+  height: 44px;
+ 
+} 
+
+
+</style>
+
+<title>Add Employee Information</title>
 </head>
 <body>
-  <h1>Employee Database</h1>
 
-  <form action="/addemp" method = "POST" enctype="multipart/form-data">
-<!--       <!-- employee ID -->
-      <label for="empID">Employee ID:</label><br>
-      <input type="text" id="empID" name="empID"><br> -->
-      <!-- employee Name -->
-      <label for="empName">Employee name:</label><br>
-      <input type="text" id="empName" name="empName" required><br>
-      <!-- Date of Birth -->
-      <label for="dob">Date of Birth:</label><br>
-      <input type="date" id="dob" name="dob"><br> 
-      <!-- Gender -->
-      <label for="gender">Gender:</label><br>
-      <select id="gender" name="gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select><br>
-      <!-- Address -->
-      <label for="address">Address:</label><br>
-      <input type="address" id="address" name="address"><br> 
-      <!-- Phone Number -->
-      <label for="contactNo">Contact Number:</label><br>
-      <input type="tel" id="contactNo" name="contactNo" placeholder="012-12345678" pattern="[0-9]{3}-[0-9]{8}"><br>
-      <!-- Email -->
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email"><br><br>
-      <!-- Job Status -->
-      <label for="job_status">Job Status:</label><br>
-      <select id="job_status" name="job_status">
-        <option value="Full-time">Full-time</option>
-        <option value="Part-time">Part-time</option>
-        <option value="Temporary">Temporary</option>
-      </select><br>
-      <!-- Hire Date -->
-      <label for="hire_date">Hire Date:</label><br>
-      <input type="date" id="hire_date" name="hire_date"><br> 
-      <!-- Job Title -->
-      <label for="job_title">Job Title:</label><br>
-      <input type="job_title" id="job_title" name="job_title"><br> 
-      <!-- Department -->
-      <label for="department">Department:</label><br>
-      <select id="department" name="department">
-        <option value="Operation Management">Operation Management</option>
-        <option value="Human Resource">Human Resource</option>
-        <option value="IT">IT</option>
-        <option value="Accounting and Finance">Accounting and Finance</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Research and Development (R&D)">Research and Development (R&D)</option>
-        <option value="Production">Production</option>
-        <option value="Quality Management">Quality Management</option>
-        <option value="Customer Service">Customer Service</option>
-        <option value="Purchasing">Purchasing</option>
-      </select><br>
-      <!--Payscale-->
-      <label for="payscale">Payscale:</label><br>
-      <input type="number" step="any" id="payscale" name="payscale"><br> 
-      <!--Payroll Type-->
-      <label for="payroll">Payroll Type:</label><br>
-      <select id="payroll" name="payroll">
-        <option value="Salary Wages">Salary Wages</option>
-        <option value="Hourly Wages">Hourly Wages</option>
-        <option value="Commissions">Commissions</option>
-        <option value="Piece-rate">Piece-rate</option>
-        <option value="Overtime Wages">Overtime Wages</option>
-        <option value="Bonus Pay">Bonus Pay</option>
-        <option value="Tip Wages">Tip Wages</option>
-      </select><br><br>
-      <!--Benefits-->
-      <label for="benefits">Benefits:</label><br>
-      <input type="checkbox" id="benefit1" name="benefit1" value="benefit1">
-      <label for="Health Insurance">Health Insurance</label><br>
-      <input type="checkbox" id="benefit2" name="benefit2" value="benefit2">
-      <label for="Life Insurance">Life Insurance</label><br>      
-      <input type="checkbox" id="benefit3" name="benefit3" value="benefit3">
-      <label for="Paid Time Off (PTO)">Paid Time Off (PTO)</label><br>    
-      <input type="checkbox" id="benefit4" name="benefit4" value="benefit4">
-      <label for="Retirement Plan">Retirement Plan</label><br>    
-      <input type="checkbox" id="benefit5" name="benefit5" value="benefit5">
-      <label for="Maternity Leave">Maternity Leave</label><br>    
-      <input type="checkbox" id="benefit6" name="benefit6" value="benefit6">
-      <label for="Annual Leave">Annual Leave</label><br><br>    
-  
-      <!--Days Attended-->
-      <label for="days_attended">Days Attended:</label><br>
-      <input type="number" id="days_attended" name="days_attended"><br> 
-      <!--Working Hours-->
-      <label for="work_hour">Working Hours:</label><br>
-      <input type="number" id="work_hour" name="work_hour"><br> 
-  
-      <label for="hrID">Human Resource ID:</label><br>
-      <input type="text" id="hrID" name="hrID"><br>
-    
-      <br>
-      <input type="submit" value="Submit">
-    </form> 
+<h1>Employee Database</h1>
+<div class='navigation'>
+
+<a class = 'menu' href="https://www.w3schools.com/html/default.asp">Display Employees</a>
+<a class = 'menu' href="https://www.w3schools.com/html/default.asp">Edit Employees</a>
+
+
+
+</div>
+
+<div class = 'forms'>
+<form >
+    <!-- employee ID -->
+    <label for="empID">Employee ID:</label><br>
+    <input type="text" id="empID" name="empID"><br>
+    <!-- employee Name -->
+    <label for="empName">Employee name:</label><br>
+    <input type="text" id="empName" name="empName" required><br>
+    <!-- Date of Birth -->
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob"><br> 
+    <!-- Gender -->
+    <label for="gender">Gender:</label><br>
+    <select id="gender" name="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select><br>
+    <!-- Address -->
+    <label for="address">Address:</label><br>
+    <input type="address" id="address" name="address"><br> 
+    <!-- Phone Number -->
+    <label for="contactNo">Contact Number:</label><br>
+    <input type="tel" id="contactNo" name="contactNo" placeholder="012-12345678" pattern="[0-9]{3}-[0-9]{8}"><br>
+    <!-- Email -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <!-- Job Status -->
+    <label for="job_status">Job Status:</label><br>
+    <select id="job_status" name="job_status">
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+      <option value="Temporary">Temporary</option>
+    </select><br>
+    <!-- Hire Date -->
+    <label for="hire_date">Hire Date:</label><br>
+    <input type="date" id="hire_date" name="hire_date"><br> 
+    <!-- Job Title -->
+    <label for="job_title">Job Title:</label><br>
+    <input type="job_title" id="job_title" name="job_title"><br> 
+    <!-- Department -->
+    <label for="department">Department:</label><br>
+    <select id="department" name="department">
+      <option value="Operation Management">Operation Management</option>
+      <option value="Human Resource">Human Resource</option>
+      <option value="IT">IT</option>
+      <option value="Accounting and Finance">Accounting and Finance</option>
+      <option value="Marketing">Marketing</option>
+      <option value="Research and Development (R&D)">Research and Development (R&D)</option>
+      <option value="Production">Production</option>
+      <option value="Quality Management">Quality Management</option>
+      <option value="Customer Service">Customer Service</option>
+      <option value="Purchasing">Purchasing</option>
+    </select><br>
+    <!--Payscale-->
+    <label for="payscale">Payscale:</label><br>
+    <input type="number" step="any" id="payscale" name="payscale"><br> 
+    <!--Payroll Type-->
+    <label for="payroll">Payroll Type:</label><br>
+    <select id="payroll" name="payroll">
+      <option value="Salary Wages">Salary Wages</option>
+      <option value="Hourly Wages">Hourly Wages</option>
+      <option value="Commissions">Commissions</option>
+      <option value="Piece-rate">Piece-rate</option>
+      <option value="Overtime Wages">Overtime Wages</option>
+      <option value="Bonus Pay">Bonus Pay</option>
+      <option value="Tip Wages">Tip Wages</option>
+    </select><br><br>
+    <!--Benefits-->
+    <label for="benefits">Benefits:</label><br>
+    <input type="checkbox" id="benefit1" name="benefit1" value="benefit1">
+    <label for="Health Insurance">Health Insurance</label><br>
+    <input type="checkbox" id="benefit2" name="benefit2" value="benefit2">
+    <label for="Life Insurance">Life Insurance</label><br>      
+    <input type="checkbox" id="benefit3" name="benefit3" value="benefit3">
+    <label for="Paid Time Off (PTO)">Paid Time Off (PTO)</label><br>    
+    <input type="checkbox" id="benefit4" name="benefit4" value="benefit4">
+    <label for="Retirement Plan">Retirement Plan</label><br>    
+    <input type="checkbox" id="benefit5" name="benefit5" value="benefit5">
+    <label for="Maternity Leave">Maternity Leave</label><br>    
+    <input type="checkbox" id="benefit6" name="benefit6" value="benefit6">
+    <label for="Annual Leave">Annual Leave</label><br><br>    
+
+    <!--Days Attended-->
+    <label for="days_attended">Days Attended:</label><br>
+    <input type="number" id="days_attended" name="days_attended"><br> 
+    <!--Working Hours-->
+    <label for="work_hour">Working Hours:</label><br>
+    <input type="number" id="work_hour" name="work_hour"><br> 
+
+    <br><input type="submit" value="Submit">
+  </form> 
+
+</div>
 </body>
 </html>
